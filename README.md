@@ -6,10 +6,6 @@ VagrantとAnsibleを利用したMagento2.1の開発環境構築スクリプト�
 
 なお、intl拡張との相性問題は[ベリテワークスさんのブログ](https://principle-works.jp/blog/magento2-setup-guide-2016-edition)にまとまっています。
 
-## About fork
-Windows環境で利用できるように、プロビジョナーに「ansible_local」を利用するよう  
-微調整しています。
-
 ### 仕様
 - Composer経由インストール式のMagento2.1.2クリーンインストール
 - サンプルデータ投入まで（日本語化・自動cronは未設定）
@@ -20,11 +16,16 @@ Windows環境で利用できるように、プロビジョナーに「ansible_lo
 - PHP 7.0
 - MySQL 5.7
 
+## About fork
+Windows環境で利用できるように、プロビジョナーに「ansible_local」を利用するよう  
+微調整しています。
+
 ## 動作確認環境
-- OSX = 10.12.1
+- ~~OSX = 10.12.1~~
+- Windows = 10 Pro
 - [vagrant](https://www.vagrantup.com/) = 1.8.4
-- [ansible](http://www.ansible.com/) = 2.1.0
-- [virtualbox](https://www.virtualbox.org/wiki/Downloads) = 5.0.10
+- ~~[ansible](http://www.ansible.com/) = 2.1.0~~
+- [virtualbox](https://www.virtualbox.org/wiki/Downloads) = ~~5.0.10~~ 5.1.14
 
 #### 管理画面
 - 管理画面URL = `/admin/`
