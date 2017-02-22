@@ -1,6 +1,7 @@
 ---
 - name: configure Magento2 to Vagrant CentOS7
-  hosts: all
+  hosts: vagrant
+  connection: local
   max_fail_percentage: 0
   become: true
   roles:

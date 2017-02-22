@@ -6,6 +6,10 @@ VagrantとAnsibleを利用したMagento2.1の開発環境構築スクリプト�
 
 なお、intl拡張との相性問題は[ベリテワークスさんのブログ](https://principle-works.jp/blog/magento2-setup-guide-2016-edition)にまとまっています。
 
+## About fork
+Windows環境で利用できるように、プロビジョナーに「ansible_local」を利用するよう  
+微調整しています。
+
 ### 仕様
 - Composer経由インストール式のMagento2.1.2クリーンインストール
 - サンプルデータ投入まで（日本語化・自動cronは未設定）
