@@ -8,6 +8,7 @@ Vagrant.configure(2) do |config|
   config.vm.provider "virtualbox" do |v|
     v.memory = 2048
   end
+  config.vm.provision "shell", run: "always", inline: "systemctl restart network.service"
   config.vm.provision "ansible_local" do |ansible|
     ansible.playbook = "provision/playbook.yml"
     ansible.sudo = true

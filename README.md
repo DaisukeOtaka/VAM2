@@ -26,11 +26,16 @@ Windows環境で利用できるように、プロビジョナーに「ansible_lo
 
 #### Network
 設定したネットワークインターフェースがうまく動いていない。  
-回避策として、vagrant sshで環境化にログインし、以下のコマンドで対応した。
+~~回避策として、vagrant sshで環境化にログインし、以下のコマンドで対応した。~~
 
-```bash
-$ sudo ifconfig eth1 192.168.33.10
-$ sudo ifconfig eth1 up
+~~$ sudo ifconfig eth1 192.168.33.10~~  
+~~$ sudo ifconfig eth1 up~~
+
+こちらを参考にVagrantFileを修正しました。  
+[vagrant + centos7 でprivate_networkで設定したIPに接続ができない](http://qiita.com/junqiq/items/a19d3ea48b072a1b28d3)
+
+```ruby:VagrantFile
+  config.vm.provision "shell", run: "always", inline: "systemctl restart network.service"
 ```
 
 #### /magento2/admin 画面が開かない
