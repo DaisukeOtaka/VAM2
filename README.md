@@ -11,19 +11,22 @@ VagrantとAnsibleを利用したMagento2.1の開発環境構築スクリプト�
 - サンプルデータ投入まで（日本語化・自動cronは未設定）
 
 #### 基本構成
-- bento/centos-7.2 (virtualbox, 5.1.10)
-- CentOS 7.2
+- ~~bento/centos-7.2 (virtualbox, 5.1.10)~~
+- ~~CentOS 7.2~~
+- centos/7 (virtualbox, 5.1.14)
+- CentOS 7.3
 - PHP 7.0
 - MySQL 5.7
 
 ## About fork
-Windows環境で利用できるように、プロビジョナーに「ansible_local」を利用するよう  
-微調整しています。
+Windows環境で利用できるように、プロビジョナーに「ansible_local」を利用するよう微調整しています。  
+また、boximageはVirtualBox Guest Additionsのインストール時でこけるので、"bento/centos-7.2"から"centos/7"に変更しています。
 
 ## 動作確認環境
 - ~~OSX = 10.12.1~~
 - Windows = 10 Pro
-- [vagrant](https://www.vagrantup.com/) = 1.8.4
+- [vagrant](https://www.vagrantup.com/) = ~~1.8.4~~ 1.9.1
+- [vagrant-vbguest](https://github.com/dotless-de/vagrant-vbguest) = 0.13.0
 - ~~[ansible](http://www.ansible.com/) = 2.1.0~~
 - [virtualbox](https://www.virtualbox.org/wiki/Downloads) = ~~5.0.10~~ 5.1.14
 
