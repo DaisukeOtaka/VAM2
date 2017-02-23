@@ -86,11 +86,11 @@ $ chmod 664 /var/www/html/magento2/var/composer_home/auth.json
 
 ## VAM2での起動の注意
 - 相当にメモリーを食うためスペックに余裕のあるラップトップを利用した方がよい。
-- VagrantとAnsibleが必要。
-- 動作確認済みはMacのみ。
+- Vagrant~~とAnsible~~が必要。
+- 動作確認済みは~~Mac~~Windowsのみ。
 
 ## 利用方法
-0. 必要環境を用意する（OSX + Vagrant + Ansible + Virtualbox）
+0. 必要環境を用意する（~~OSX~~Windows + Vagrant ~~+ Ansible~~ + Virtualbox）
 0. 任意のディレクトリにこのリポジトリを`git clone`。
 0. 変数ファイル`/provision/group_vars/all.yml.sample`を`/provision/group_vars/all.yml`に変更。
 0. 変数ファイルに`/provision/group_vars/all.yml`の`github_token:`に [github personal access token](https://help.github.com/articles/creating-an-access-token-for-command-line-use/)を追加。※[composer installのAPI制限](https://getcomposer.org/doc/articles/troubleshooting.md#api-rate-limit-and-oauth-tokens)対策。
