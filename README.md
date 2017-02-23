@@ -31,10 +31,10 @@ Windows環境で利用できるように、プロビジョナーに「ansible_lo
 ~~$ sudo ifconfig eth1 192.168.33.10~~  
 ~~$ sudo ifconfig eth1 up~~
 
-こちらを参考にVagrantFileを修正しました。  
+こちらを参考にVagrantfileを修正しました。  
 [vagrant + centos7 でprivate_networkで設定したIPに接続ができない](http://qiita.com/junqiq/items/a19d3ea48b072a1b28d3)
 
-```ruby:VagrantFile
+```ruby:Vagrantfile
   config.vm.provision "shell", run: "always", inline: "systemctl restart network.service"
 ```
 
