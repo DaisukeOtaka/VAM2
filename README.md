@@ -22,6 +22,44 @@ VagrantとAnsibleを利用したMagento2.1の開発環境構築スクリプト�
 Windows環境で利用できるように、プロビジョナーに「ansible_local」を利用するよう微調整しています。  
 また、boximageはVirtualBox Guest Additionsのインストール時にこけるので、"bento/centos-7.2"から"centos/7"に変更しています。
 
+### Issues
+
+#### Network
+設定したネットワークインターフェースがうまく動いていない。  
+回避策として、vagrant sshで環境化にログインし、以下のコマンドで対応した。
+
+```bash
+$ sudo ifconfig eth1 192.168.33.10
+$ sudo ifconfig eth1 up
+```
+
+#### /magento2/admin 画面が開かない
+これは日本語化問題に起因しているので、とりあえず下記のようにして逃げた。
+この名称が実際にどこで使われているのか見つけられていないので、値はちょっと適当。。
+
+```bash
+$ cp /var/www/html/magento2/vendor/magento/framework/View/Element/Html/Calendar.php /var/www/html/magento2/vendor/magento/framework/View/Element/Html/Calendar.php.ori
+$ vim /var/www/html/magento2/vendor/magento/framework/View/Element/Html/Calendar.php
+```
+
+Calendar.php - Line:85
+```diff
+-                'abbreviated' => $this->encoder->encode(
+-                    array_values(iterator_to_array($monthsData['format']['abbreviated']))
+-                ),
++                'abbreviated' => array('Jan','Feb','Mar','Apr','Jun','Jul','Aug','Sep','Oct','Nov','Dec')
+```
+
+#### /magento2/admin 画面が開かない2
+これは、出力されたエラーレポート内容を見ると権限問題なので、下記で回避。
+
+```bash
+$ cat /var/www/html/magento2/var/report/1184317909558
+a:4:{i:0;s:280:"Could not read /var/www/html/magento2/var/composer_home/auth.json
+..."
+$ chmod 664 /var/www/html/magento2/var/composer_home/auth.json
+```
+
 ## 動作確認環境
 - ~~OSX = 10.12.1~~
 - Windows = 10 Pro
