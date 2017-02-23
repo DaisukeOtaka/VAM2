@@ -20,7 +20,7 @@ VagrantとAnsibleを利用したMagento2.1の開発環境構築スクリプト�
 
 ## About fork
 Windows環境で利用できるように、プロビジョナーに「ansible_local」を利用するよう微調整しています。  
-また、boximageはVirtualBox Guest Additionsのインストール時でこけるので、"bento/centos-7.2"から"centos/7"に変更しています。
+また、boximageはVirtualBox Guest Additionsのインストール時にこけるので、"bento/centos-7.2"から"centos/7"に変更しています。
 
 ## 動作確認環境
 - ~~OSX = 10.12.1~~
